@@ -18,3 +18,10 @@ dev = [
 
 [tool.taskipy.tasks]
 start = "python -m command.run"
+
+migrate-to-head = "alembic upgrade head"
+migrate-to = "alembic upgrade"
+migrate-downgrade-to = "alembic downgrade"
+migrate-revision = "alembic revision --autogenerate -m"
+migrate-check-current = "alembic current"
+migrate-check-history = "alembic history"

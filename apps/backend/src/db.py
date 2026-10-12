@@ -15,7 +15,7 @@ engine = create_async_engine(settings.db_url)
 AsyncSessionLocal = async_sessionmaker(engine, expire_on_commit=False)
 
 
-id = Annotated[uuid.UUID, mapped_column(primary_key=True, default_factory=uuid.uuid4)]
+id = Annotated[uuid.UUID, mapped_column(primary_key=True, default=uuid.uuid4)]
 created_at = Annotated[
     datetime, mapped_column(DateTime(timezone=True), server_default=func.now())
 ]

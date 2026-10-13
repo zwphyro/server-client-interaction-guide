@@ -11,6 +11,7 @@ x-backend-env: &backend-env
   POSTGRES_USER: ${POSTGRES_USER:?}
   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
   BACKEND_LOG_LEVEL: ${BACKEND_LOG_LEVEL:-INFO}
+  BACKEND_CORS_ORIGINS: '${BACKEND_CORS_ORIGINS:-["http://localhost:3000"]}'
 
 services:
   frontend:

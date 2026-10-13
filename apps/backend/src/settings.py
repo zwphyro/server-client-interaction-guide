@@ -17,6 +17,9 @@ class Settings(BaseSettings):
     db_password: str = Field(..., alias="POSTGRES_PASSWORD")
 
     log_level: str = Field(..., alias="BACKEND_LOG_LEVEL")
+    cors_origins: list[str] = Field(
+        ["http://localhost:3000"], alias="BACKEND_CORS_ORIGINS"
+    )
 
     model_config = SettingsConfigDict(
         env_file=os.path.join(BASE_DIR / ".env"),

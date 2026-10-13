@@ -1,0 +1,95 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.heading,
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.block {
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton) 0%,
+    var(--color-skeleton-highlight) 50%,
+    var(--color-skeleton) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 6px;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.title {
+  width: 70%;
+  height: 24px;
+}
+
+.author {
+  width: 96px;
+  height: 22px;
+  border-radius: 999px;
+}
+
+.line {
+  width: 100%;
+  height: 14px;
+}
+
+.lineShort {
+  width: 60%;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block {
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .list {
+    gap: 12px;
+  }
+
+  .card {
+    gap: 14px;
+    padding: 18px 16px;
+  }
+
+  .title {
+    width: 85%;
+    height: 22px;
+  }
+}
